@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumTestProject", "AppiumTestProject.csproj", "{328B907F-1E5C-49F0-9F4D-6FDE0E364CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppiumFramework", "AppiumFramework\AppiumFramework.csproj", "{328B907F-1E5C-49F0-9F4D-6FDE0E364CAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DnsGui", "DnsGui\DnsGui.csproj", "{F84876AC-27E2-4E80-803F-CFEE5345CC6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutotestDnsGui", "AutotestDnsGui\AutotestDnsGui.csproj", "{A09233BE-A139-4FA2-AAE1-DB708B05A6BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{328B907F-1E5C-49F0-9F4D-6FDE0E364CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328B907F-1E5C-49F0-9F4D-6FDE0E364CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328B907F-1E5C-49F0-9F4D-6FDE0E364CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84876AC-27E2-4E80-803F-CFEE5345CC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84876AC-27E2-4E80-803F-CFEE5345CC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84876AC-27E2-4E80-803F-CFEE5345CC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84876AC-27E2-4E80-803F-CFEE5345CC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09233BE-A139-4FA2-AAE1-DB708B05A6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09233BE-A139-4FA2-AAE1-DB708B05A6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09233BE-A139-4FA2-AAE1-DB708B05A6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09233BE-A139-4FA2-AAE1-DB708B05A6BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
