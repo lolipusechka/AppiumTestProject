@@ -1,4 +1,4 @@
-using AppiumFramework.Core.Base.Test;
+п»їusing AppiumFramework.Core.Base.Test;
 using AppiumFramework.Core.Helpers;
 using AppiumTestProject.Core.Driver;
 using AppiumTestProject.Core.Helpers;
@@ -25,18 +25,18 @@ namespace AutotestDnsGui.Autotests
         }
 
         [Test]
-        public void TestMethod([Values("Санкт-Петербург", "Красноярск", "Минусинск")] string city)
+        public void TestMethod([Values("РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРі", "РљСЂР°СЃРЅРѕСЏСЂСЃРє", "РњРёРЅСѓСЃРёРЅСЃРє")] string city)
         {
             try
             {
                 AppiumDriver.ActivateApp(Properties.Testing.Default.Package);
 
-                LogHelper.Step(1, "Проверка, что на начальном экране отображается выбор города", () =>
+                LogHelper.Step(1, "РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РЅР° РЅР°С‡Р°Р»СЊРЅРѕРј СЌРєСЂР°РЅРµ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РІС‹Р±РѕСЂ РіРѕСЂРѕРґР°", () =>
                 {
-                    CheckCityOnInitialScreen("Москва");
+                    CheckCityOnInitialScreen("РњРѕСЃРєРІР°");
                 });
 
-                LogHelper.Step(2, "Выбор города на начальном экране", () =>
+                LogHelper.Step(2, "Р’С‹Р±РѕСЂ РіРѕСЂРѕРґР° РЅР° РЅР°С‡Р°Р»СЊРЅРѕРј СЌРєСЂР°РЅРµ", () =>
                 {
                     _chooseCityInitialScreen.ClickChangeSityBtn();
 
@@ -50,7 +50,7 @@ namespace AutotestDnsGui.Autotests
                     _chooseCityInitialScreen.ClickAcceptBtn();
                 });
 
-                LogHelper.Step(3, "Проверка, что приложение запросит разрешение на отправку уведомлений", () =>
+                LogHelper.Step(3, "РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РїСЂРёР»РѕР¶РµРЅРёРµ Р·Р°РїСЂРѕСЃРёС‚ СЂР°Р·СЂРµС€РµРЅРёРµ РЅР° РѕС‚РїСЂР°РІРєСѓ СѓРІРµРґРѕРјР»РµРЅРёР№", () =>
                 {
                     _authInitialScreen.SkipAuthBtnClick();
 
@@ -58,15 +58,15 @@ namespace AutotestDnsGui.Autotests
                     AlertHelper.ClickPermissionAllow();
                 });
 
-                LogHelper.Step(4, $"Проверка, что на главной странице отображается выбранный город: '{city}'", () =>
+                LogHelper.Step(4, $"РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РЅР° РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ РіРѕСЂРѕРґ: '{city}'", () =>
                 {
                     _homeScreen.AssertIsLoaded();
 
                     AssertHelper.AssertIsTrue(_homeScreen.GetCurrentSettlement().Equals(city, StringComparison.OrdinalIgnoreCase),
-                        $"На главной странице отображается выбранный город: '{city}'");
+                        $"РќР° РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ РіРѕСЂРѕРґ: '{city}'");
                 });
 
-                LogHelper.Step(5, "Проверка, что в корзине нет товаров", () =>
+                LogHelper.Step(5, "РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РІ РєРѕСЂР·РёРЅРµ РЅРµС‚ С‚РѕРІР°СЂРѕРІ", () =>
                 {
                     _homeScreen.BottomMenu.ClickCartBtn();
                     _cartScreen.AssertIsLoaded();
@@ -74,17 +74,17 @@ namespace AutotestDnsGui.Autotests
                     _cartScreen.AssertIsEmptyContentActionBtnExsist();
                 });
 
-                LogHelper.Step(6, $"Проверка, что на странице профиля отображается выбранный город: '{city}'", () =>
+                LogHelper.Step(6, $"РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РЅР° СЃС‚СЂР°РЅРёС†Рµ РїСЂРѕС„РёР»СЏ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ РіРѕСЂРѕРґ: '{city}'", () =>
                 {
                     _cartScreen.BottomMenu.ClickProfileBtn();
                     _profileScreen.AssertIsLoaded();
                     _profileScreen.AssertIsLoginBtnExsist();
 
                     AssertHelper.AssertIsTrue(_profileScreen.GetSettlement().Equals(city, StringComparison.OrdinalIgnoreCase),
-                        $"На экране отображается город, подтверждённый в шаге 2 ({city})");
+                        $"РќР° СЌРєСЂР°РЅРµ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РіРѕСЂРѕРґ, РїРѕРґС‚РІРµСЂР¶РґС‘РЅРЅС‹Р№ РІ С€Р°РіРµ 2 ({city})");
                 });
 
-                LogHelper.Step(7, "Проверка, что в списке избранного нет товаров", () =>
+                LogHelper.Step(7, "РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ РІ СЃРїРёСЃРєРµ РёР·Р±СЂР°РЅРЅРѕРіРѕ РЅРµС‚ С‚РѕРІР°СЂРѕРІ", () =>
                 {
                     _profileScreen.ClickFavoritesBtn();
                     _favoritesScreen.AssertIsLoaded();
@@ -98,7 +98,7 @@ namespace AutotestDnsGui.Autotests
                     _chooseCityInitialScreen.AssertIsLoaded();
 
                     AssertHelper.AssertIsTrue(_chooseCityInitialScreen.GetCurrentSettlement().Equals(cityName, StringComparison.OrdinalIgnoreCase),
-                        $"Отображаеться ожидаемый город: '{cityName}'");
+                        $"РћС‚РѕР±СЂР°Р¶Р°РµС‚СЊСЃСЏ РѕР¶РёРґР°РµРјС‹Р№ РіРѕСЂРѕРґ: '{cityName}'");
                 }
             }
             catch (Exception ex)

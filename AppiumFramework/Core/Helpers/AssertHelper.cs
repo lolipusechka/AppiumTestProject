@@ -10,7 +10,6 @@
 
         public static void AssertIsTrue(bool condition, string message)
         {
-
             if (condition)
             {
                 LogTrue(message);

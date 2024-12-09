@@ -9,7 +9,6 @@ namespace AppiumTestProject.Core.Base.Elements
     {
         Button,
         CheckBox,
-        Label,
         TextView,
         TextEdit
     }

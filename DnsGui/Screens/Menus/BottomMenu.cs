@@ -47,7 +47,7 @@ namespace DnsGui.Screens.Menus
         {
             var btn = new Button($"Корзина, {count} новых уведомления", By.XPath(string.Format(_cartNotificationsLocator, count)));
 
-            AssertHelper.AssertIsTrue(btn.IsElementExsist(), $"На кнопке \"Корзина\" отображается увдомления в количестве: {count}");
+            AssertHelper.AssertIsTrue(btn.IsElementExsist(), $"На кнопке \"Корзина\" отображается уведомления в количестве: {count}");
         }
     }
 }
