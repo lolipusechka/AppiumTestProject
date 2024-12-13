@@ -28,7 +28,10 @@ namespace AppiumFramework.Core.Helpers
             try
             {
                 T value = func();
+
                 LogSucces(description);
+                ScreenshotHelper.TakeScreenshot(GetFileName(description));
+
                 return value;
             }
             catch (Exception ex)
@@ -45,7 +48,10 @@ namespace AppiumFramework.Core.Helpers
             try
             {
                 T value = func();
+
                 LogSucces(message);
+                ScreenshotHelper.TakeScreenshot(GetFileName(message));
+
                 return value;
             }
             catch (Exception ex)
@@ -64,7 +70,9 @@ namespace AppiumFramework.Core.Helpers
             try
             {
                 action();
+
                 LogSucces(description);
+                ScreenshotHelper.TakeScreenshot(GetFileName(description));
             }
             catch (Exception ex)
             {
@@ -80,7 +88,9 @@ namespace AppiumFramework.Core.Helpers
             try
             {
                 action();
+
                 LogSucces(message);
+                ScreenshotHelper.TakeScreenshot(GetFileName(message));
             }
             catch (Exception ex)
             {
@@ -92,5 +102,10 @@ namespace AppiumFramework.Core.Helpers
         private static void LogSucces(string description) => Info($"[ВЫПОЛНЕН] {description}");
 
         private static void LogFault(string description, Exception exception) => Error($"[{exception.GetType().Name}] {description}");
+
+        private static string GetFileName(string description)
+        {
+            return description.Replace(" ", "").Replace(".", "").Replace(":", "").Replace("\"", "");
+        }
     }
 }

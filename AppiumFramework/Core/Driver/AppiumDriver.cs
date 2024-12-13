@@ -1,4 +1,5 @@
 ﻿using AppiumFramework.Core.Helpers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
@@ -71,6 +72,36 @@ namespace AppiumTestProject.Core.Driver
             {
                 Instance?.TerminateApp(appId);
             });
+        }
+
+        public static void ActivateLandscapeOrientation()
+        {
+            Instance.Orientation = ScreenOrientation.Landscape;
+        }
+
+        public static void ActivatePortraitOrientation()
+        {
+            Instance.Orientation = ScreenOrientation.Portrait;
+        }
+
+        public static void SetScreenOrientation(ScreenOrientation orientation)
+        {
+            Instance.Orientation = orientation;
+        }
+
+        public static ScreenOrientation GetScreenOrientation()
+        {
+            return Instance.Orientation;
+        }
+
+        internal static Screenshot GetScreenshot()
+        {
+            return Instance.GetScreenshot();
+        }
+
+        public static void ToggleAirplaneMode()
+        {
+            Instance?.ToggleAirplaneMode();
         }
     }
 }
